@@ -96,7 +96,7 @@ var NodeBasedHandler = /** @class */ (function (_super) {
                 error: authorizationError
             };
             emitter.emit(ServerEventsEmitter.ON_AUTHORIZATION_RESPONSE, completeResponse);
-            response.end('Close your browser to continue');
+            response.end('<script>window.close()</script>');
         };
         this.authorizationPromise = new Promise(function (resolve, reject) {
             emitter.once(ServerEventsEmitter.ON_UNABLE_TO_START, function () {
